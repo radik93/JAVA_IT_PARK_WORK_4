@@ -8,6 +8,7 @@ public class Main {
 	int a[] = new int[100];
         Scanner scaner = new Scanner(System.in);
         int oper,count=0,number;
+        System.out.println("Меню:");
         System.out.println("1.Показать массив");
         System.out.println("2.Добавить в начало");
         System.out.println("3.Добавить в конец");
