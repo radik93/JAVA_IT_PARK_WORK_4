@@ -17,7 +17,7 @@ public class Main {
         System.out.println("2.Добавить в начало");
         System.out.println("3.Добавить в конец");
         System.out.println("4.Удалить по позиции");
-        System.out.println("5.Cортировка вставками");
+        System.out.println("5.Cортировка выбором");
         System.out.println("6.Выход");
     }
     public static void selectProcess()
@@ -38,7 +38,7 @@ public class Main {
                 if (fullArray(count))//выполняем если массив не переполнен
                 {
                     System.out.print("Введите число:");
-                    a = addFirstElement(count, a, scaner.nextInt());
+                    a = addFirstElement(count, a, scaner.nextInt());// вызываем функцию для добавления элемента в начало массива
                     count++;
                 }
                 break;
@@ -46,19 +46,19 @@ public class Main {
                 if (fullArray(count)) //выполняем если массив не переполнен
                 {
                     System.out.print("Введите число:");
-                    a = addEndElement(count, a, scaner.nextInt());
+                    a = addEndElement(count, a, scaner.nextInt());// вызываем функцию для добавления элемента в конец массива
                     count++;
                 }
                 break;
             case 4:
                 System.out.print("Введите номер удаляемого элемента от 0 до " + (count == 0 ? 0 : count - 1));
-                a = DelElement(count, a, scaner.nextInt());
+                a = DelElement(count, a, scaner.nextInt());//вызываем функцию для удаления элемента массива
                 count--;
                 if (count < 0)
                     count = 0;
                 break;
             case 5:
-                a = insertsSorting(count, a, 0);
+                a = insertsSorting(count, a, 0);//вызываем функцию сортировки выбором
                 break;
             case 6:
                 System.exit(0);
