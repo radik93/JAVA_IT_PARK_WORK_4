@@ -1,9 +1,11 @@
 package ru.itpark;
 
 public class ArrayList {
-    // константа - в коде уже изменить не получится
-    private final int INITIAL_SIZE = 100;
+    // первоначальный размер массива
+    private int INITIAL_SIZE = 100;
     // поле - хранилище данных
+    private int buff[];
+    // поле - буферный
     private int elements[];
     // количество элементов массива
     private int count;
@@ -68,7 +70,12 @@ public class ArrayList {
      * @return сам элемент по заданному индексу
      */
     public int get(int index) {
-        return elements[index];
+        if(index>count) {
+            return elements[index];
+        }
+        else {
+            return -1;
+        }
     }
 
     /**
@@ -76,8 +83,15 @@ public class ArrayList {
      * @param index
      * @param element
      */
-    public void replace(int element, int index) {
-        elements[index] = element;
+    public void replace(int element, int index)
+    {
+       if(index>count) {
+           elements[index] = element;
+       }
+       else
+       {
+           System.out.println("По указанному индексу нет значения, операция не выполнена");
+       }
     }
     /**
      * 6.Сортировка вставками
@@ -162,6 +176,15 @@ public class ArrayList {
         if (count==INITIAL_SIZE)
         {
             System.out.println("Превышено максимальное допустимое количество значений!");
+            buff = new int[INITIAL_SIZE];
+            buff = elements;
+            INITIAL_SIZE++;
+            elements = new int[INITIAL_SIZE];
+            for (int i=0;i<INITIAL_SIZE-1;i++)
+            {
+                elements[i]=buff[i];
+            }
+            System.out.println("Размер массива увеличин на 1, повторите операцию по добавлению нового элемента");
             return false;
         }
         else
