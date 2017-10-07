@@ -14,7 +14,6 @@ public class ArrayList {
         elements = new int[INITIAL_SIZE];
         count = 0;
     }
-
     /**
      * 1.Добавить элемент в конец
      *
