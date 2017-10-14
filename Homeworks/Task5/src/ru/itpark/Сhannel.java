@@ -1,6 +1,8 @@
 package ru.itpark;
 
-public class Сhannel {
+import java.time.LocalTime;
+
+public class Сhannel implements ChannelSearch {
     private String name;
     private Transfer transfer[];
 
@@ -15,5 +17,17 @@ public class Сhannel {
 
     public Transfer[] getTransfer() {
         return transfer;
+    }
+
+    @Override
+    public String selectTransfer(Transfer transfer[]) {
+        LocalTime currentTime = LocalTime.now();
+        for (int i = 0; i < transfer.length; i++) {
+            if (currentTime.isAfter(transfer[i].getBeginTime()) &&
+                    currentTime.isBefore(transfer[i].getEndTime())) {
+                return transfer[i].getName();
+            }
+        }
+        return "Технический перерыв";
     }
 }

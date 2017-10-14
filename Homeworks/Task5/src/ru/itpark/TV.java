@@ -33,7 +33,7 @@ public class TV implements Commutation {
     public int switchСhannel(String nameСhannel) {
         for (int i = 0; i < channel.length; i++) {
             if (channel[i].getName().equalsIgnoreCase(nameСhannel)) {
-                selectTransfer(LocalTime.now(), channel[i].getTransfer());
+                System.out.println(channel[i].selectTransfer(channel[i].getTransfer()));
                 return 0;
             }
         }
@@ -41,16 +41,4 @@ public class TV implements Commutation {
         return -1;
     }
 
-    @Override
-    public int selectTransfer(LocalTime currentTime, Transfer transfer[]) {
-        for (int i = 0; i < transfer.length; i++) {
-            if (currentTime.isAfter(transfer[i].getBeginTime()) &&
-                    currentTime.isBefore(transfer[i].getEndTime())) {
-                System.out.println(transfer[i].getName());
-                return 0;
-            }
-        }
-        System.out.println("Технический перерыв");
-        return -1;
-    }
 }
