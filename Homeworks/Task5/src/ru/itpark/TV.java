@@ -2,14 +2,34 @@ package ru.itpark;
 
 import java.time.LocalTime;
 
-public class TV {
+public class TV implements Commutation {
+
+    private static TV onlyTV;
     private Сhannel channel[];
     private String nameСhannel;
 
-    public TV(Сhannel channel[]) {
-        this.channel = channel;
+    private TV() {
+        // this.channel = channel;
+        //this.nameСhannel = nameСhannel;
     }
 
+    static {
+        // onlyTV = new TV(nameСhannel,channel);
+        onlyTV = new TV();
+    }
+
+    //public TV(Сhannel channel[]) {
+    //    this.channel = channel;
+    //}
+
+    public static TV onlyTV(String nameСhannel, Сhannel channel[]) {
+        onlyTV.channel = channel;
+        onlyTV.nameСhannel = nameСhannel;
+
+        return onlyTV;
+    }
+
+    @Override
     public int switchСhannel(String nameСhannel) {
         for (int i = 0; i < channel.length; i++) {
             if (channel[i].getName().equalsIgnoreCase(nameСhannel)) {
@@ -21,7 +41,8 @@ public class TV {
         return -1;
     }
 
-    private int selectTransfer(LocalTime currentTime, Transfer transfer[]) {
+    @Override
+    public int selectTransfer(LocalTime currentTime, Transfer transfer[]) {
         for (int i = 0; i < transfer.length; i++) {
             if (currentTime.isAfter(transfer[i].getBeginTime()) &&
                     currentTime.isBefore(transfer[i].getEndTime())) {
