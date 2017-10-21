@@ -9,6 +9,6 @@ public class Main {
                 .outputLetters(new OutputLetters())
                 .outputGap(new OutputGap())
                 .build();
-        parser.eventAddText("Hi 1!");
+        parser.parse("Hi 1!");
     }
 }

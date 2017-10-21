@@ -1,5 +1,5 @@
 package ru.itpark;
 
 public interface Observer {
-    void handleEvent(String Text);
+    void handleEvent(char c);
 }
