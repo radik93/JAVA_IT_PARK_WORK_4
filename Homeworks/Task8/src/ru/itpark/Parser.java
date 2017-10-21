@@ -8,12 +8,18 @@ public class Parser implements Observable {
     private Observer[] observers = new Observer[3];
     private int count = 0;
 
+    String Word = "";
 
     @Override
     public void eventAddText(String Text) {
         char chars[] = Text.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             notifyAll(chars[i]);
+            Word = Word + chars[i];
+            if ((int) chars[i] == 32 || i == chars.length - 1) {
+                System.out.println(Word);
+                Word = "";
+            }
         }
     }
 
