@@ -1,11 +1,13 @@
 package ru.itpark;
 
-public class Thelines implements Runnable{
+public class Thelines  extends TextViewer implements Runnable{
+
     private String text;
 
     private int count;
 
-    public Thelines (String text)
+    @Override
+    public void setText(String text)
     {
         this.text = text;
     }

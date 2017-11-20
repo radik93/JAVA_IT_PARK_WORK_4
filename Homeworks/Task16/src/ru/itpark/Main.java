@@ -3,15 +3,18 @@ package ru.itpark;
 public class Main {
 
     public static void main(String[] args) {
-	//Thenumber thenumber = new Thenumber("Hi 1");
 
-        TextViewer textViewer = new TextViewer();
-        textViewer.setText("Text 1");
+        Thelines thelines   = new Thelines();
+        Thenumber thenumber = new Thenumber();
 
-        Runnable runnable1 = new Thenumber("Text 1");
-        Runnable runnable2 = new Thelines("Text 1");
-        textViewer.addTask(runnable1);
-        textViewer.addTask(runnable2);
-        textViewer.textProcess();
+        TextViewer textViewers[] = {thelines, thenumber};
+
+
+
+        for (TextViewer textViewer:textViewers) {
+            textViewer.setText("Hi 1!");
+            textViewer.addTask((Runnable) textViewer);
+            textViewer.textProcess();
+        }
     }
 }
