@@ -1,19 +1,19 @@
 package ru.itpark;
 
-public class Thelines  extends TextViewer implements Runnable{
+public class Thelines implements setTexts{
 
-    private String text;
+    public String text;
 
     private int count;
 
     @Override
-    public void setText(String text)
-    {
+    public void setText(String text) {
         this.text = text;
     }
 
     @Override
-    public void run() {
+    public void run(){
+
         char chars[] = text.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             int aCode = (int) chars[i];

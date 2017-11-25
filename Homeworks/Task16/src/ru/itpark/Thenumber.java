@@ -1,14 +1,12 @@
 package ru.itpark;
 
-public class Thenumber extends TextViewer implements Runnable {
+public class Thenumber implements setTexts {
 
     private String text;
 
     private int count;
 
-    @Override
-    public void setText(String text)
-    {
+    public void setText(String text) {
         this.text = text;
     }
 

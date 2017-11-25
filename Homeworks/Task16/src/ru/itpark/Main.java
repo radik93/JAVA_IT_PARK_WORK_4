@@ -4,17 +4,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Thelines thelines   = new Thelines();
-        Thenumber thenumber = new Thenumber();
+        TextViewer textViewer = new TextViewer();
 
-        TextViewer textViewers[] = {thelines, thenumber};
+        textViewer.setText("Hi 1!");
+
+        setTexts runnable1 = new Thelines();
+        setTexts runnable2 = new Thenumber();
 
 
 
-        for (TextViewer textViewer:textViewers) {
-            textViewer.setText("Hi 1!");
-            textViewer.addTask((Runnable) textViewer);
-            textViewer.textProcess();
-        }
+        textViewer.addTask(runnable1);
+        textViewer.addTask(runnable2);
+        textViewer.textProcess();
+
     }
 }
