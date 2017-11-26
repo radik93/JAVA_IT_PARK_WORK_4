@@ -7,10 +7,12 @@ import java.util.List;
 
 public class TextViewer {
 
-    private setTexts runnables[] = new setTexts[3];
+    //private setTexts runnables[] = new setTexts[3];
+
+    List<setTexts> runnables = new ArrayList<>();
 
 
-    protected String text;
+    private String text;
 
     private int count = 0;
 
@@ -25,16 +27,23 @@ public class TextViewer {
 
     public void textProcess() {
 
-            new Thread(() -> {
-                for (int i = 0; i < count; i++) {
-                    runnables[i].setText(text);
-                    runnables[i].run();
-                }
-            }).start();
-        }
 
+        Iterator<setTexts> iterator = runnables.iterator();
+
+        while (iterator.hasNext()) {
+            setTexts task = iterator.next();
+            new Thread(() ->
+            {
+                task.setText(text);
+                task.run();
+
+            }
+            ).start();
+        }
+    }
 
     public void addTask(setTexts task) {
-         runnables[count++] = task;
+        runnables.add(task);
+        //[count++] = task;
     }
 }

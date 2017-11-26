@@ -19,6 +19,6 @@ public class Thenumber implements setTexts {
                 count++;
             }
         }
-        System.out.println("Количество цифр:"+count);
+        System.out.println("Количество цифр:" + count);
     }
 }

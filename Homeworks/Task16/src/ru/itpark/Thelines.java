@@ -1,6 +1,6 @@
 package ru.itpark;
 
-public class Thelines implements setTexts{
+public class Thelines implements setTexts {
 
     public String text;
 
@@ -12,7 +12,7 @@ public class Thelines implements setTexts{
     }
 
     @Override
-    public void run(){
+    public void run() {
 
         char chars[] = text.toCharArray();
         for (int i = 0; i < chars.length; i++) {
@@ -21,6 +21,6 @@ public class Thelines implements setTexts{
                 count++;
             }
         }
-        System.out.println("Количество букв: "+count);
+        System.out.println("Количество букв: " + count);
     }
 }

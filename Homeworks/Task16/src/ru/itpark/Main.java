@@ -12,7 +12,6 @@ public class Main {
         setTexts runnable2 = new Thenumber();
 
 
-
         textViewer.addTask(runnable1);
         textViewer.addTask(runnable2);
         textViewer.textProcess();
