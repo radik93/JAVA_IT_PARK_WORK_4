@@ -4,7 +4,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 public class Main {
 
-  private static final String URL = "jdbc:postgresql://localhost:5432/sidikov_db";
+  private static final String URL = "jdbc:postgresql://localhost:5432/Abdullin_db";
   private static final String USER = "postgres";
   private static final String PASSWORD = "Zaq12wsx";
 
@@ -19,7 +19,8 @@ public class Main {
 
     HumanService service = new HumanService(humansDao);
 
-    Human human = Human.builder()
+    Human human;
+    human = Human.builder()
         .age(55)
         .citizen("Америка")
         .name("Авраам")

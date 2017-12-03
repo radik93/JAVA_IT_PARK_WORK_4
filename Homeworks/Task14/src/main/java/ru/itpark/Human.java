@@ -2,8 +2,9 @@ package ru.itpark;
 
 import lombok.*;
 
-@Getter
+
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
