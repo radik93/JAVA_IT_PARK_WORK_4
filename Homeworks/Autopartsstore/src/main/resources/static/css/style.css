@@ -62,3 +62,16 @@ li {
     width: 474px;
     margin-bottom: 5px;
 }
+#idlistcarmodels{
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background:#f6f6f6; /*добавляем фон к пункту меню*/
+    color:#111111; /*меняем цвет ссылок*/
+    padding:5px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    border-radius:4px; /*добавляем скругление*/
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+    width: 432px;
+    margin-bottom: 5px;
+}

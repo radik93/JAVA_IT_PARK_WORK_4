@@ -13,20 +13,28 @@ import ru.itpark.app.models.User;
 public class CarModelsDto {
 
 
-  private String model;
-  private String imageUrl;
+    private String model;
+    private String imageUrl;
 
-  public static CarModelsDto from(CarModel model) {
-    CarModelsDto result = CarModelsDto.builder()
-        .model(model.getModel())
-        .build();
+    // public static CarModelsDto from(CarModel model) {
+    //      CarModelsDto result = CarModelsDto.builder()
+    //              .model(model.getModel())
+    //              .build();
+    //
+//
+    //     if (model.getImage() != null) {
+    //        result.imageUrl = "file://localhost/c$/Storage/" + model.getImage().getStorageFileName();
+    //        System.out.println(result.imageUrl);
+    //    }
 
+    //    return result;
+    //  }
+    public CarModelsDto(CarModel model) {
+        this.model = model.getModel();
 
-    if (model.getImage() != null) {
-      result.imageUrl = "file://localhost/c$/Storage/" + model.getImage().getStorageFileName();
-      System.out.println(result.imageUrl);
+        if (model.getImage() != null) {
+            this.imageUrl = "/files/" + model.getImage().getStorageFileName();
+        }
     }
 
-    return result;
-  }
 }

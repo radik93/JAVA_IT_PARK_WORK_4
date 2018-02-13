@@ -8,6 +8,14 @@ function addCar(file, brand, model) {
         contentType: false,
         processData: false,
         url: "/add/car",
-        data: formData
-    });
+        data: formData,
+
+    success: function (data) {
+        $("#avatar").html("<img class=\"img-circle\" width='100' height='100' src='/files/" +
+            data + "'/>");
+    },
+    error: function (data) {
+        alert(data)
+    }
+});
 }

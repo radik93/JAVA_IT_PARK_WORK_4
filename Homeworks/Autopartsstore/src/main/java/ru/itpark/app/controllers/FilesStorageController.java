@@ -29,11 +29,15 @@ public class FilesStorageController {
   @PostMapping(value = "/add/car")
   @ResponseStatus(value = HttpStatus.ACCEPTED)
   public String handleCarAdd(AddNewCar addNewCar) {
-    Car car = Car.builder()
-            .brand(addNewCar.getBrand())
-            .build();
-       carsService.addCar(car);
 
+    Car car;
+    car = carsService.getCarByBrand(addNewCar.getBrand());
+    if(car==null) {
+      car = Car.builder()
+              .brand(addNewCar.getBrand())
+              .build();
+      carsService.addCar(car);
+    }
     CarModel carModel = CarModel.builder()
             .model(addNewCar.getModel())
             .car(car)

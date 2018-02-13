@@ -24,4 +24,9 @@ public class CarsServicelmpl implements CarsService {
     public void addCar(Car car) {
         carsRepositoris.save(car);
     }
+
+    @Override
+    public Car getCarByBrand(String brand) {
+        return carsRepositoris.findCarByBrand(brand);
+    }
 }

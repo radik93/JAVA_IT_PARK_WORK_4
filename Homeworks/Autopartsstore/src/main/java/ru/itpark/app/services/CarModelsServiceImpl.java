@@ -23,7 +23,7 @@ public class CarModelsServiceImpl implements CarModelsService {
         List<CarModel> carModelList = carsModelRepositoris.findByCar_Id(id);
 
         for (CarModel carModel : carModelList) {
-            carModelsDtos.add(CarModelsDto.from(carModel));
+            carModelsDtos.add(new CarModelsDto(carModel));
         }
         return carModelsDtos;
     }

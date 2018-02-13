@@ -15,11 +15,8 @@
 <br>
 <div>
     <#list model.carModelsDtoList as carModel>
-    <#if carModel.imageUrl??>
-            <img class="img-circle" width='100' height='100' src="${carModel.imageUrl}">
-
-        </#if>
-        <li>${carModel.model}</li><br>
+         <li id="idlistcarmodels" ><img class="img-circle" width='100' height='100' src="${carModel.imageUrl}">
+        ${carModel.model}</li><br>
     </#list>
 </div>
 </body>

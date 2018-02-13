@@ -51,9 +51,15 @@ public class MainControllers {
     //@RequestMapping(value = "/cars/model", method = RequestMethod.GET)
     @GetMapping("/carsmodel")
     public String getCarModelsPage(@RequestParam("id") Long id, @ModelAttribute("model") ModelMap model) {
+
+        if (carModelsDtoList!=null)
+        {
+            carModelsDtoList.clear();
+        }
         carModelsDtoList = carModelsService.getAllCarsModelById(id);
-        model.clear();
+        System.out.println(carModelsDtoList);
         model.addAttribute("carModelsDtoList", carModelsDtoList);
+
         return "carmodels";
     }
 

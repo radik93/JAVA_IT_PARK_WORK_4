@@ -27,9 +27,6 @@ public class Main {
         return new BCryptPasswordEncoder();
     }
     public static void main(String[] args) {
-        //newUser newUser = new newUser();
-        //newUser.newser();
-
         SpringApplication.run(Main.class);
     }
 
