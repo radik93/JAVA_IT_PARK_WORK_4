@@ -26,5 +26,4 @@ public class Autopart {
     private int reserve;
     //автозапчасти
     private Car car;
-
 }
